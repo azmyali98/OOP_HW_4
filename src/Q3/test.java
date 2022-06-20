@@ -6,6 +6,7 @@ public class test {
 		BillBoard b = new BillBoard();
 		ColorGenerator c = ColorGenerator.getInstance();
 		c.setBillBoardToNotify(b);
+		
 		b.setColorUpdatingAlgorithm(new SerialColorUpdatingAlgorithm());
 		try {
 			Thread.sleep(10000);
@@ -13,7 +14,30 @@ public class test {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		b.setColorUpdatingAlgorithm(new ColumnColorUpdatingAlgorithm());
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		b.setColorUpdatingAlgorithm(new TwoPassesColorUpdatingAlgorithm());
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		b.setColorUpdatingAlgorithm(new RandomColorUpdatingAlgorithm());
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
