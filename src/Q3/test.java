@@ -7,6 +7,13 @@ public class test {
 		ColorGenerator c = ColorGenerator.getInstance();
 		c.setBillBoardToNotify(b);
 		b.setColorUpdatingAlgorithm(new SerialColorUpdatingAlgorithm());
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		b.setColorUpdatingAlgorithm(new ColumnColorUpdatingAlgorithm());
 	}
 
 }
